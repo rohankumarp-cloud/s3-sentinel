@@ -5,27 +5,6 @@ S3-Sentinel is an automated cloud data pipeline built on Amazon Web Services (AW
 
 This project demonstrates core cloud architecture, security best practices (IAM roles over hardcoded credentials), Python programming with boto3, and Linux system automation via cron.
 
-🏗️ Architecture Diagram & Workflow
-[ User / Data Source ] 
-        │
-        ▼ (Uploads raw text file)
-┌────────────────────────┐
-│  Raw S3 Bucket         │
-└────────────────────────┘
-        │
-        │ (Polled every 5 mins)
-        ▼
-┌───────────────────────────────┐
-│  AWS EC2 Instance (Ubuntu)    │
-│  ├── Python Script (boto3)    │
-│  └── Cron Automation Service  │
-└───────────────────────────────┘
-        │
-        │ (Downloads, transforms to uppercase, uploads, deletes original)
-        ▼
-┌────────────────────────┐
-│ Processed S3 Bucket    │
-└────────────────────────>
 🛠️ Tech Stack & Services Used
 Cloud Provider: Amazon Web Services (AWS)
 
